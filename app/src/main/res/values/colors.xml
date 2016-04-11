@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#019BE3</color>
+    <color name="colorStatus">#007BB4</color>
+    <color name="colorBackground">#EEEEEE</color>
+    <color name="colorAcOffline">#1587BD</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorHot">#F76F6F</color>
+
+    <color name="apptheme_color">#DA4A38</color>
+    <color name="colorPrimaryDark">#125688</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="navigationBarColor">#000000</color>
+
+
+    <color name="almost_white_bg">#FAFAFA</color>
+</resources>

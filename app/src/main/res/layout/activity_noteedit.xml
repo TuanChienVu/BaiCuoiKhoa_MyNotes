@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.dclover.readbook.c3_search.C3_ActivityMain">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorAcOffline"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/btnBack"
+            android:layout_width="54dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_back" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/btnBack"
+            android:layout_toRightOf="@+id/btnBack"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:id="@+id/frTitle"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/btnBack"
+                android:layout_toRightOf="@+id/btnBack"
+                android:layout_weight="0"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true">
+
+                <Button
+                    android:id="@+id/btnTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/boderbutton"
+                    android:singleLine="true"
+                    android:textAllCaps="false"
+                    android:textColor="#ffffff" />
+            </FrameLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlFunctionChoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/frTitle"
+                android:layout_toRightOf="@+id/frTitle"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:id="@+id/btnNoteContent"
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="3dp"
+                        android:layout_weight="1"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:clickable="true">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_description" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/btnShopCart"
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@+id/btnCheckNote"
+                        android:layout_toLeftOf="@+id/btnNoteContent"
+                        android:layout_toStartOf="@+id/btnNoteContent"
+                        android:layout_weight="1"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:clickable="true">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_shopcart" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/btnCheckNote"
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@+id/btnNoteContent"
+                        android:layout_toLeftOf="@+id/btnShopCart"
+                        android:layout_toStartOf="@+id/btnShopCart"
+                        android:layout_weight="1"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:clickable="true">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_check" />
+                    </FrameLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/frContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/frFunction"
+        android:layout_below="@+id/relativeLayout4"
+        android:background="#FFF9C8">
+
+        <RelativeLayout
+            android:id="@+id/rlTitle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/notetop"
+            android:paddingBottom="5dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp">
+
+            <TextView
+                android:id="@+id/title_text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_toLeftOf="@+id/notelist_date"
+                android:layout_toRightOf="@+id/title_text1"
+                android:background="@android:color/transparent"
+                android:hint="@string/no_title"
+                android:imeOptions="actionNext"
+                android:singleLine="true"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/notelist_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:paddingLeft="10dp"
+                android:paddingRight="10sp"
+                android:text="11/11/1992"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <view xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/body"
+            class="com.vutuanchien.mynotes.NoteEdit$LineEditText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/rlTitle"
+            android:background="@android:color/transparent"
+            android:capitalize="sentences"
+            android:fadingEdge="vertical"
+            android:gravity="top"
+            android:hint="@string/content_hint"
+            android:padding="5dp"
+            android:scrollbars="vertical"
+            android:textColorHint="#8e8a8a"
+            android:textSize="22sp" />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/frFunction"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_column="4"
+        android:background="#fffab5"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btnDelete"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:src="@drawable/ic_delete" />
+
+        <ImageButton
+            android:id="@+id/btnShare"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:src="@drawable/ic_share" />
+
+        <ImageButton
+            android:id="@+id/btnAdd"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:src="@drawable/ic_add" />
+
+        <ImageButton
+            android:id="@+id/btnMenu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:src="@drawable/ic_3chamdoc" />
+    </LinearLayout>
+</RelativeLayout>

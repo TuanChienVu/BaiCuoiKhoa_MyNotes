@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Ghi Chú</string>
+
+    <string name="navigation_drawer_open">Mở Thanh Điều Hướng</string>
+    <string name="navigation_drawer_close">Đóng Thanh Điều Hướng</string>
+    <string name="content">Bạn đã chắc chắn muốn xóa ghi chú này?</string>
+    <string name="share_note">Chia Sẻ Ghi Chú Của Bạn</string>
+    <string name="cancel">Hủy</string>
+    <string name="yesdelete">Đồng Ý, Xóa</string>
+    <string name="action_settings">Cài Đặt</string>
+
+    <string name="nav_addnote">Thêm Ghi Chú</string>
+    <string name="nav_search">Tìm Kiếm</string>
+    <string name="nav_tools">Cài Đặt</string>
+    <string name="nav_communicate">Liên Hệ</string>
+    <string name="nav_share">Chia Sẻ</string>
+    <string name="nav_send">Gửi</string>
+    <string name="about">Về Chúng Tôi</string>
+    <string name="title">Ghi Chú : </string>
+    <string name="menu_delete">Xóa Ghi Chú</string>
+    <string name="no_title">Chưa Đặt Tên</string>
+    <string name="edit_note">Chỉnh Sửa Ghi Chú</string>
+    <string name="content_hint">Nội Dung Ghi Chú</string>
+    <string name="save_menu_noteedit">Lưu</string>
+    <string name="delete_menu_noteedit">Xóa</string>
+</resources>
