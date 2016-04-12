@@ -17,10 +17,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FilterQueryProvider;
+import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import at.markushi.ui.CircleButton;
 
@@ -32,6 +34,7 @@ public class MainActivity extends ListActivity
     private static final int ACTIVITY_EDIT = 1;
     private static final int DELETE_ID = Menu.FIRST;
     Toolbar toolbar;
+    FrameLayout btnLoad;
     TextView tvAppName;
     private Notes mDbHelper;
     SearchView mSearchview;
@@ -47,13 +50,26 @@ public class MainActivity extends ListActivity
         btnAddNote = (CircleButton) findViewById(R.id.btnAdd);
         tvAppName = (TextView) findViewById(R.id.tvAppName);
         mSearchview = (SearchView) findViewById(R.id.searchview);
+        btnLoad = (FrameLayout) findViewById(R.id.btnSync);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
 
+//        set button reload to refresh from beginning
+        btnLoad.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//            Clear query
+                mSearchview.setQuery("", false);
+//                Collapse the action view
+                mSearchview.onActionViewCollapsed();
+                tvAppName.setVisibility(View.VISIBLE);
+//                tvAppName.setText(R.string.app_name);
+            }
+        });
 //        set searchview full toolbar
         mSearchview.setOnSearchClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tvAppName.setVisibility(View.GONE);
+                tvAppName.setVisibility(View.INVISIBLE);
                 mSearchview.setMaxWidth(toolbar.getWidth());
             }
         });
@@ -111,8 +127,8 @@ public class MainActivity extends ListActivity
     private void fillData() {
         // Get all of the notes from the database and create the item list
         final Cursor notesCursor = mDbHelper.fetchAllNotes();
-        String[] fromDatabase = new String[]{Notes.KEY_ROWID, Notes.KEY_TITLE, Notes.KEY_DATE};
-        int[] toListView = new int[]{R.id.tvSTT, R.id.tvNoteName, R.id.tvTime};
+        String[] fromDatabase = new String[]{Notes.KEY_TITLE, Notes.KEY_DATE};
+        int[] toListView = new int[]{R.id.tvNoteName, R.id.tvTime};
 
         // Now create an array adapter and set it to display using our row
         adapter = new SimpleCursorAdapter(MainActivity.this, R.layout.notes_row, notesCursor, fromDatabase, toListView);
@@ -128,8 +144,8 @@ public class MainActivity extends ListActivity
 
     //    Click here to new startactivity then create your task/ note
     private void createNote() {
-        Intent i = new Intent(this, NoteEdit.class);
-        startActivityForResult(i, ACTIVITY_CREATE);
+        Intent intent = new Intent(this, NoteEdit.class);
+        startActivityForResult(intent, ACTIVITY_CREATE);
     }
 
     //    Start activity with result to detail screen

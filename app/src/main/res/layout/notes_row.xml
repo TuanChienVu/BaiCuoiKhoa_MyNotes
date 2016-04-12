@@ -5,29 +5,18 @@
     android:weightSum="10">
 
     <TextView
-        android:id="@+id/tvSTT"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:paddingBottom="10dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="2dp"
-        android:paddingTop="10dp"
-        android:singleLine="true"
-        android:text="STT 1"
-        android:textSize="20sp" />
-
-    <TextView
         android:id="@+id/tvNoteName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/tvSTT"
-        android:layout_toRightOf="@+id/tvSTT"
         android:padding="10dp"
         android:singleLine="true"
         android:text="Task 1"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:layout_toLeftOf="@+id/tvTime"
+        android:layout_toStartOf="@+id/tvTime" />
 
     <TextView
         android:id="@+id/tvTime"

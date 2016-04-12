@@ -112,6 +112,8 @@ public class NoteEdit extends AppCompatActivity implements View.OnClickListener 
         if (mRowId == null) {
             Bundle extras = getIntent().getExtras();
             mRowId = extras != null ? extras.getLong(Notes.KEY_ROWID) : null;
+            btnShare.setEnabled(false);
+            btnDelete.setEnabled(false);
         }
         populateFields();
     }
@@ -322,11 +324,11 @@ public class NoteEdit extends AppCompatActivity implements View.OnClickListener 
     private void populateFields() {
         if (mRowId != null) {
             cursor = mDbHelper.fetchNote(mRowId);
-            startManagingCursor(cursor);
             mTitleText.setText(cursor.getString(cursor.getColumnIndexOrThrow(Notes.KEY_TITLE)));
             mBodyText.setText(cursor.getString(cursor.getColumnIndexOrThrow(Notes.KEY_BODY)));
             curText = cursor.getString(cursor.getColumnIndexOrThrow(Notes.KEY_BODY));
-
+            btnShare.setEnabled(true);
+            btnDelete.setEnabled(true);
         }
     }
 }

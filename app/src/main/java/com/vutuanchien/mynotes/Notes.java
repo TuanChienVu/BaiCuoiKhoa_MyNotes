@@ -104,19 +104,19 @@ public class Notes {
     //     Return a Cursor over the list of all notes in the database
     public Cursor fetchAllNotes() {
         Cursor mCursor = sqLiteDatabase.query(DATABASE_TABLE, new String[]{KEY_ROWID, KEY_TITLE,
-                KEY_BODY, KEY_DATE}, null, null, null, null, null);
+                KEY_BODY, KEY_DATE}, null, null, null, null, KEY_ROWID + " DESC");
         if (mCursor != null) {
             mCursor.moveToFirst();
         }
         return mCursor;
     }
 
-//    Return a cursor fetch by name
+    //    Return a cursor fetch by name
     public Cursor fetchNotesByName(String inputText) throws SQLException {
         Cursor mCursor = null;
         if (inputText == null || inputText.length() == 0) {
             mCursor = sqLiteDatabase.query(DATABASE_TABLE, new String[]{KEY_ROWID, KEY_TITLE, KEY_BODY, KEY_DATE},
-                    null, null, null, null, null);
+                    null, null, null, null, KEY_ROWID + " DESC");
 
         } else {
             mCursor = sqLiteDatabase.query(true, DATABASE_TABLE, new String[]{KEY_ROWID, KEY_TITLE, KEY_BODY, KEY_DATE},
@@ -135,7 +135,7 @@ public class Notes {
 
         Cursor mCursor = sqLiteDatabase.query(true, DATABASE_TABLE, new String[]{KEY_ROWID,
                         KEY_TITLE, KEY_BODY, KEY_DATE}, KEY_ROWID + "=" + rowId, null,
-                null, null, null, null);
+                null, null, KEY_ROWID + " DESC", null);
         if (mCursor != null) {
             mCursor.moveToFirst();
         }
